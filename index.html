@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Pill Reminder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header>
+    <h1>💊 Smart Pill Reminder</h1>
+    <p class="tagline">Never miss your medicine again!</p>
+    <nav>
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('history')">History</button>
+      <button onclick="showPage('taken')">Taken</button>
+    </nav>
+  </header>
+
+  <main id="home" class="page active">
+    <h2>Add Medicine</h2>
+    <input id="medicineName" type="text" placeholder="Medicine name" list="medicineList">
+    <datalist id="medicineList"></datalist>
+
+    <input id="dosage" type="text" placeholder="Dosage (e.g., 1 tablet)">
+    <input id="time" type="time">
+    <button id="addBtn">Add Reminder</button>
+    <button id="voiceBtn">🎙️ Speak</button>
+
+    <ul id="reminderList"></ul>
+  </main>
+
+  <main id="history" class="page">
+    <h2>History</h2>
+    <ul id="historyList"></ul>
+  </main>
+
+  <main id="taken" class="page">
+    <h2>Taken Medicines</h2>
+    <ul id="takenList"></ul>
+  </main>
+
+  <audio id="reminderSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_2a3d63dfb6.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
